@@ -1,44 +1,48 @@
+let dir = '/src/images/';
 const candidates = [
   {
     name: "Zé Pereira",
     poliParty: "PT",
     number: 13,
+    image: `${dir}Zé Pereira.png`
   },
   {
     name: "Alexander Olivera",
     poliParty: "PSOL",
     number: 50,
+    image: `${dir}Alexander Olivera.png`
   },
   {
     name: "Luiza Seberar",
     poliParty: "PSL",
     number: 43,
+    image: `${dir}Luiza Seberar.png`
   },
   {
     name: "Alberto Roberto",
     poliParty: "NOVO",
     number: 16,
+    image: `${dir}Alberto Roberto.png`
+    
   },
   {
-    name: "Elisa Souza",
+    name: "Eliza Souza",
     poliParty: "REDE",
     number: 40,
-  },
-  {
-    name: "Pedro Lopes",
-    poliParty: "PCdoB",
-    number: 35,
+    image: `${dir}Eliza Souza.png`
   },
   {
     name: "Suzana Cabral",
     poliParty: "DEM",
     number: 55,
+    image: `${dir}Suzana Cabral.png`
   },
 ];
 
 let keyboard = window.document.querySelector(".box__keyboard");
 let name = window.document.querySelector(".screen__name");
 let politicParty = window.document.querySelector(".screen__politicParty");
+let image = window.document.querySelector('.screen__image');
 
 function addButtons() {
   let i = 0;
@@ -70,36 +74,54 @@ function validateNumber(res) {
      
       name.innerHTML = candidates[i].name;
       politicParty.innerHTML = candidates[i].poliParty;
-      
+      image.style.display='block'
+      image.setAttribute('src',candidates[i].image)
+      window.document.querySelector('.keyboard__button--confirm').addEventListener('click',()=>confirmNumber())
     }
   }
 }
 
+function disableButtons(type){
+    switch (type) {
+        case true:
+          for(let i = 0;i<btns.length;++i){
+            btns[i].disabled = true
+          }
+          break
+          case false: 
+          for(let i = 0;i<btns.length;++i){
+            btns[i].disabled = false
+          }
+    }
+}
+
 function makeAbstention() {
   if (viewNumber.value.length < 1) {
-    viewNumber.value = "BRANCO ";
-    
-      for(let i = 0;i<btns.length;++i){
-        btns[i].disabled = true
-      }
+    viewNumber.value = "BRANCO ";   
+      disableButtons(true)
+      window.document.querySelector('.keyboard__button--confirm').addEventListener('click',()=>confirmNumber())
   }
   
 }
+
+
 
 function reset() {
   viewNumber.value = null;
   name.innerHTML = null;
   politicParty.innerHTML = null;
-
-  for(let i = 0;i<btns.length;++i){
-    btns[i].disabled = false
-  }
-
+  image.style.display = 'none'
+  disableButtons(false)
 }
 
 
-function confirmNumber(type){
-  if( type === true ) {
-    viewNumber.value = 'FIM'
-  }
+function confirmNumber(){
+  reset()
+  viewNumber.value = 'FIM'
+  disableButtons(true)
+  window.setTimeout(()=>window.location.reload(),1000)
+  
 }
+
+
+

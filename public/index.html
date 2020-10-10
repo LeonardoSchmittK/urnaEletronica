@@ -23,24 +23,66 @@
     <div class="interface">
       <div class="interface__box">
         <div class="box__screen">
-          <h1 class='screen__name'></h1>
-          <p class='screen__politicParty'></p>
+          <h1 class="screen__name"></h1>
+          <p class="screen__politicParty"></p>
           <input type="text" max="100" readonly class="screen__viewNumber" />
+          <img src alt='imageCandidate' class="screen__image"></img>
         </div>
         <div class="box__keyboard">
-          <h1 class='keyboard__title'>Urna Eleitoral</h1>
+          <h1 class="keyboard__title">Urna Eleitoral</h1>
           <script src="/src/index.js"></script>
 
-          <button class="keyboard__button--branco" onclick='makeAbstention()'>Branco</button>
+          <button class="keyboard__button--branco" onclick="makeAbstention()">
+            Branco
+          </button>
 
           <button class="keyboard__button--corrige" onclick="reset()">
             Corrige
           </button>
 
-          <button class="keyboard__button--confirm" onclick="confirmNumber()">Confirma</button>
+          <button class="keyboard__button--confirm" >
+            Confirma
+          </button>
         </div>
         <div class="box__bottomDetail"></div>
       </div>
+
+      <section class='interface_info'>
+          <table class='info__table'> 
+            <th>             
+               Name
+            </th> 
+            <th>             
+              Number
+           </th>       
+            <tbody> 
+               <tr>
+                <td>Zé Pereira</td>
+                <td>13</td>            
+              </tr>
+                <tr>
+                  <td>Alexander Olivera</td>
+                  <td>50</td>            
+                </tr>    
+                <tr>
+                  <td>Luiza Seberar</td>
+                  <td>43</td>            
+                </tr>    
+                <tr>
+                  <td>Alberto Roberto</td>
+                  <td>16</td>            
+                </tr>    
+                <tr>
+                  <td>Eliza Souza</td>
+                  <td>40</td>            
+                </tr>    
+                <tr>
+                  <td>Suzana Cabral</td>
+                  <td>55</td>            
+                </tr>       
+              </tbody>                     
+          </table>
+      </section>
     </div>
   </body>
 </html>
