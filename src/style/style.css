@@ -1,8 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 1.1em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: Source Sans Pro, monospace;
+  text-transform: uppercase;
 }
 
 ::-moz-selection {
@@ -15,12 +17,93 @@
 
 button {
   outline: none;
-  border: none;
-  padding: 7px;
+  border: 1px solid #0000009d;
+  width: 80px;
+  height: 35px;
+  margin: auto;
+  -webkit-box-shadow: inset 0px 0px 3px #000000, 1px 1px 5px #000000b6;
+          box-shadow: inset 0px 0px 3px #000000, 1px 1px 5px #000000b6;
+  border-radius: 3px;
 }
 
 button:focus {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.interface__box {
+  background-color: #e2e1e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  max-width: 700px;
+  height: 350px;
+  margin: 50px auto;
+  -webkit-transform: translateZ(30deg);
+          transform: translateZ(30deg);
+}
+
+.interface__box .box__screen {
+  padding: 10px;
+  background-color: #fff;
+  width: 60%;
+  height: 90%;
+  margin-right: 20px;
+  -webkit-box-shadow: inset -10px -10px 13px #80808063;
+          box-shadow: inset -10px -10px 13px #80808063;
+}
+
+.interface__box .box__screen .screen__viewNumber {
+  font-size: 4em;
+  border: none;
+  outline: none;
+  width: 65px;
+}
+
+.interface__box .box__keyboard {
+  width: 300px;
+  background: #332f2f;
+  display: -ms-grid;
+  display: grid;
+  padding: 10px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  row-gap: 5px;
+}
+
+.interface__box .box__keyboard .keyboard__title {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  margin: auto;
+  background: #fff;
+  padding: 5px;
+}
+
+.interface__box .box__keyboard .keyboard__button {
+  font-size: 20px;
+  color: #fff;
+  width: 60px;
+  background: inherit;
+}
+
+.interface__box .box__keyboard .button__9 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.interface__box .box__keyboard .keyboard__button--confirm {
+  background-color: #3ae22b;
+}
+
+.interface__box .box__keyboard .keyboard__button--branco {
+  background-color: white;
+}
+
+.interface__box .box__keyboard .keyboard__button--corrige {
+  background-color: #fa6e10;
 }
 /*# sourceMappingURL=style.css.map */

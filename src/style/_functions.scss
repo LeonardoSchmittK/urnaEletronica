@@ -1,5 +1,12 @@
 @mixin text($val) {
-  @if $val == 3 {
-    
+  @if $val == 3 { 
+    font-size: 30px;
+  } 
+  @else if $val == 2 {
+    font-size: 20px;
+  }
+
+  @else if $val == 1 {
+    font-size:10px;
   }
 }

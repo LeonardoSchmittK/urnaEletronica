@@ -70,7 +70,7 @@ function validateNumber(res) {
      
       name.innerHTML = candidates[i].name;
       politicParty.innerHTML = candidates[i].poliParty;
-    
+      
     }
   }
 }
@@ -94,5 +94,12 @@ function reset() {
   for(let i = 0;i<btns.length;++i){
     btns[i].disabled = false
   }
-  
+
+}
+
+
+function confirmNumber(type){
+  if( type === true ) {
+    viewNumber.value = 'FIM'
+  }
 }

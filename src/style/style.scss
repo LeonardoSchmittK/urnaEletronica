@@ -3,7 +3,71 @@
 @import "./variables";
 @import "./assets";
 
+.interface__box {
+  background-color: $secondColor;
+  display: flex;
+  padding: 20px;
+  max-width: 700px;
+  height: 350px;
+  margin: 50px auto;
+  transform: translateZ(30deg);
 
+  .box__screen {
+   padding:10px;
+   background-color: $thirdColor;
+   width: 60%;
+   height: 90%;
+   margin-right:20px;
+   box-shadow: inset -10px -10px 13px #80808063;
+
+   .screen__viewNumber {
+     font-size: 4em;
+     border:none;
+     outline: none;
+     width: 65px;
+   }
+  }
+
+  .box__keyboard {
+    width: 300px;
+    background: $mainColor;
+    display: grid;
+    padding:10px;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 5px;
+    
+     .keyboard__title{
+        grid-column-start: 1 ;
+        grid-column-end: 4 ;
+        text-align: center;
+        margin: auto;
+        background: $thirdColor;
+        padding: 5px;
+     }
+      .keyboard__button {
+       @include text(2);
+       color: $thirdColor;
+       width: 60px;
+       background: inherit;
+       
+      }
+
+     .button__9 {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      
+     }
+     .keyboard__button--confirm {
+      background-color: rgb(58, 226, 43);
+     }
+     .keyboard__button--branco {
+      background-color: rgb(255, 255, 255);
+     }
+     .keyboard__button--corrige {
+      background-color: rgb(250, 110, 16);
+     }
+   }
+}
 
 
 
