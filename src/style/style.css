@@ -1,3 +1,17 @@
+@-webkit-keyframes popUp {
+  from {
+    opacity: 0;
+    margin-top: 200px;
+  }
+}
+
+@keyframes popUp {
+  from {
+    opacity: 0;
+    margin-top: 200px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +38,7 @@ button {
   -webkit-box-shadow: inset 0px 0px 3px #000000, 1px 1px 5px #000000b6;
           box-shadow: inset 0px 0px 3px #000000, 1px 1px 5px #000000b6;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 button:focus {
@@ -42,6 +57,8 @@ button:focus {
   margin: 50px auto;
   -webkit-box-shadow: 2px 10px 10px rgba(163, 158, 158, 0.418);
           box-shadow: 2px 10px 10px rgba(163, 158, 158, 0.418);
+  -webkit-animation: popUp 1s;
+          animation: popUp 1s;
 }
 
 .interface__box .box__screen {
@@ -114,7 +131,7 @@ button:focus {
 }
 
 .interface__box .box__keyboard .keyboard__button--branco {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .interface__box .box__keyboard .keyboard__button--corrige {
@@ -122,8 +139,8 @@ button:focus {
 }
 
 table {
-  -webkit-box-shadow: 0 3px 3px rgba(128, 128, 128, 0.363);
-          box-shadow: 0 3px 3px rgba(128, 128, 128, 0.363);
+  -webkit-box-shadow: 0 3px 3px #8080805d;
+          box-shadow: 0 3px 3px #8080805d;
   padding: 5px;
   margin: 80px auto;
 }

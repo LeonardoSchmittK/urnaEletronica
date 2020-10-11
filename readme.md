@@ -1,4 +1,4 @@
-# :brazil: Urna Eletrônica
+# :brazil: Urna Eleitoral
 
 :fire:Projeto de Urna Eletrônica empreendido através de: 
 
@@ -8,14 +8,18 @@
 - SASS 
 - BEM CSS 
 
----
+![screenshot](./screenshot.png)
 
-- [ ] Não use Frameworks ou Bibliotecas 
-- [ ] Aproprie-se de grid/flex css 
+
+
+
+- [x] Não use Frameworks ou Bibliotecas 
+- [x] Aproprie-se de grid/flex css 
+- [x] Use a sintaxe BEM
 - [x] Renderize os botões através do JavaScript
-- [ ] Componha a folha de estilo com SASS, organizado
-- [ ] Introduza animações
-- [ ] Faça a urna funcionar, adequando a foto do candidato fictício e informações dele
+- [x] Componha a folha de estilo com SASS, organizado
+- [x] Introduza animações
+- [x] Faça a urna funcionar, adequando a foto do candidato fictício e informações dele
 - [x] Aprenda algo
 
 
