@@ -139,22 +139,29 @@ button:focus {
 }
 
 table {
-  -webkit-box-shadow: 0 3px 3px #8080805d;
-          box-shadow: 0 3px 3px #8080805d;
-  padding: 5px;
+  -webkit-box-shadow: 0 3px 3px #6965655d;
+          box-shadow: 0 3px 3px #6965655d;
+  padding: 10px;
   margin: 80px auto;
+  -webkit-box-shadow: inset 1px 1px 10px #cac9c9;
+          box-shadow: inset 1px 1px 10px #cac9c9;
 }
 
-table tr td {
-  background-color: #6985e0;
+table td {
+  background-color: #e2e3e5;
   padding: 10px;
   text-align: center;
+  width: 200px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border: 1px solid transparent;
 }
 
-table tr td:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: .3s;
-  transition: .3s;
+table td:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border: 1px solid #e2e1e0;
 }
 /*# sourceMappingURL=style.css.map */

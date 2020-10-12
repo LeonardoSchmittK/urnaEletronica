@@ -1,47 +1,50 @@
-let dir = "/src/images/";
+const dir = "/src/images/";
+const numbers = ["13","50","43","16","40","55"];
 const candidates = [
   {
     name: "Zé Pereira",
     poliParty: "PT",
-    number: 13,
+    number: "13",
     image: `${dir}Zé Pereira.png`,
   },
   {
     name: "Alexander Olivera",
     poliParty: "PSOL",
-    number: 50,
+    number: "50",
     image: `${dir}Alexander Olivera.png`,
   },
   {
     name: "Luiza Seberar",
     poliParty: "PSL",
-    number: 43,
+    number: "43",
     image: `${dir}Luiza Seberar.png`,
   },
   {
     name: "Alberto Roberto",
     poliParty: "NOVO",
-    number: 16,
+    number: "16",
     image: `${dir}Alberto Roberto.png`,
   },
   {
     name: "Eliza Souza",
     poliParty: "REDE",
-    number: 40,
+    number: "40",
     image: `${dir}Eliza Souza.png`,
   },
   {
     name: "Suzana Cabral",
     poliParty: "DEM",
-    number: 55,
+    number: "55",
     image: `${dir}Suzana Cabral.png`,
   },
 ];
 
-let keyboard = window.document.querySelector(".box__keyboard");
-let name = window.document.querySelector(".screen__name");
-let politicParty = window.document.querySelector(".screen__politicParty");
-let image = window.document.querySelector(".screen__image");
+const keyboard = window.document.querySelector(".box__keyboard");
+const name = window.document.querySelector(".screen__name");
+const politicParty = window.document.querySelector(".screen__politicParty");
+const image = window.document.querySelector(".screen__image");
+const viewNumber = window.document.querySelector(".screen__viewNumber");
+const btns = window.document.getElementsByClassName("keyboard__button");
 
 function addButtons() {
   let i = 0;
@@ -57,27 +60,25 @@ function addButtons() {
 
 addButtons();
 
-const viewNumber = window.document.querySelector(".screen__viewNumber");
-const btns = window.document.getElementsByClassName("keyboard__button");
-
 for (let i = 0; i < btns.length; ++i) {
   btns[i].addEventListener("click", () => {
-    const res = Number((viewNumber.value += btns[i].getAttribute("data-num")));
+    const res = (viewNumber.value += btns[i].getAttribute("data-num"));
+    if (res.length >= 2) disableButtons(true);
     validateNumber(res);
   });
 }
 
 function validateNumber(res) {
-  for (let i = 0; i < candidates.length; ++i) {
-    if (res === candidates[i].number) {
+  for (let i = 0; i < numbers.length; ++i) {
+    if (res === numbers[i]) {
       name.innerHTML = candidates[i].name;
       politicParty.innerHTML = candidates[i].poliParty;
       image.style.display = "block";
       image.setAttribute("src", candidates[i].image);
       window.document
         .querySelector(".keyboard__button--confirm")
-        .addEventListener("click", () => confirmNumber());
-    }
+        .addEventListener("click", () => confirmNumber(res));
+    }    
   }
 }
 
@@ -111,11 +112,15 @@ function reset() {
   politicParty.innerHTML = null;
   image.style.display = "none";
   disableButtons(false);
+  validateNumber(viewNumber.value)
 }
 
-function confirmNumber() {
+function confirmNumber(res) {
+  if(viewNumber.value === res || viewNumber.value=== "BRANCO "){
   reset();
-  viewNumber.value = "FIM";
   disableButtons(true);
-  window.setTimeout(() => window.location.reload(), 1000);
+  viewNumber.value = "FIM";
+  window.setTimeout(() => window.location.reload(), 300);
+  console.log(res)
+  }
 }
