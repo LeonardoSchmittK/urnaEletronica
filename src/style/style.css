@@ -55,10 +55,8 @@ button:focus {
   max-width: 700px;
   height: 350px;
   margin: 50px auto;
-  -webkit-box-shadow: 2px 10px 10px rgba(163, 158, 158, 0.418);
-          box-shadow: 2px 10px 10px rgba(163, 158, 158, 0.418);
-  -webkit-animation: popUp 1s;
-          animation: popUp 1s;
+  -webkit-animation: popUp 1000ms;
+          animation: popUp 1000ms;
 }
 
 .interface__box .box__screen {
@@ -81,8 +79,9 @@ button:focus {
 .interface__box .box__screen .screen__viewNumber {
   font-size: 4em;
   border: none;
-  outline: none;
-  width: 224px;
+  pointer-events: none;
+  width: 70%;
+  height: auto;
 }
 
 .interface__box .box__screen .screen__image {
@@ -100,13 +99,12 @@ button:focus {
   padding: 10px;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  row-gap: 5px;
 }
 
 .interface__box .box__keyboard .keyboard__title {
   -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
   text-align: center;
   margin: auto;
   background: #fff;
@@ -122,8 +120,8 @@ button:focus {
 
 .interface__box .box__keyboard .button__9 {
   -ms-grid-column: 1;
-      grid-column-start: 1;
-  grid-column-end: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 
 .interface__box .box__keyboard .keyboard__button--confirm {

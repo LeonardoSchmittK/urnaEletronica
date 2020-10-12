@@ -10,8 +10,8 @@
   max-width: 700px;
   height: 350px;
   margin: 50px auto;
-  box-shadow: 2px 10px 10px rgba(163, 158, 158, 0.418);
-  animation: popUp 1s;
+  animation: popUp 1000ms;
+
   .box__screen {
     padding: 10px;
     background-color: $thirdColor;
@@ -21,11 +21,13 @@
     box-shadow: inset -10px -10px 13px #80808063;
     display: flex;
     flex-direction: column;
+
     .screen__viewNumber {
       font-size: 4em;
       border: none;
-      outline: none;
-      width: 224px;
+      pointer-events: none;
+      width: 70%;
+      height: auto;
     }
 
     .screen__image {
@@ -42,11 +44,9 @@
     display: grid;
     padding: 10px;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 5px;
 
     .keyboard__title {
-      grid-column-start: 1;
-      grid-column-end: 4;
+      grid-column: 1/4;
       text-align: center;
       margin: auto;
       background: $thirdColor;
@@ -60,8 +60,7 @@
     }
 
     .button__9 {
-      grid-column-start: 1;
-      grid-column-end: 4;
+      grid-column: 1/4;
     }
     .keyboard__button--confirm {
       background-color: #3ae22b;
